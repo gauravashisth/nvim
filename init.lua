@@ -1,6 +1,5 @@
 -- Make sure to setup `mapleader` and `maplocalleader` before
 -- loading lazy.nvim so that mappings are correct.
--- This is also a good place to setup other settings (vim.opt)
 
 require("bootstrap")
 
@@ -13,38 +12,38 @@ require("lazy").setup("plugins")
 local ftplugin_path = "ftplugin." -- Base module path
 
 vim.diagnostic.config({
-  virtual_text = true,           -- Show inline error messages
-  float = { border = "rounded" }, -- Ensure floating diagnostics are shown
-  update_in_insert = false,
-  severity_sort = true,          -- Sort diagnostics by severity
+	virtual_text = true, -- Show inline error messages
+	float = { border = "rounded" }, -- Ensure floating diagnostics are shown
+	update_in_insert = false,
+	severity_sort = true, -- Sort diagnostics by severity
 })
 
 vim.api.nvim_create_autocmd("FileType", {
-  callback = function(args)
-    local module = ftplugin_path .. args.match
-    local ok, _ = pcall(require, module)
-    if not ok then
-      -- If no specific configuration exists, silently ignore
-      -- Uncomment the line below for debugging purposes
-      -- print("No configuration for filetype: " .. args.match)
-    end
-  end,
+	callback = function(args)
+		local module = ftplugin_path .. args.match
+		local ok, _ = pcall(require, module)
+		if not ok then
+			-- If no specific configuration exists, silently ignore
+			-- Uncomment the line below for debugging purposes
+			-- print("No configuration for filetype: " .. args.match)
+		end
+	end,
 })
 
 --highlight when yanking text
 vim.api.nvim_create_autocmd("TextYankPost", {
-  desc = "Highlight when yanking test",
-  group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
-  callback = function()
-    vim.highlight.on_yank()
-  end,
+	desc = "Highlight when yanking test",
+	group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
+	callback = function()
+		vim.highlight.on_yank()
+	end,
 })
 
 vim.api.nvim_create_autocmd("BufEnter", {
-  pattern = { ".env", "wrangler.toml", ".dev.vars" },
-  callback = function()
-    vim.cmd("CloakEnable")
-  end,
+	pattern = { ".env", "wrangler.toml", ".dev.vars" },
+	callback = function()
+		vim.cmd("CloakEnable")
+	end,
 })
 
 -- vim.api.nvim_create_autocmd("LspAttach", {
