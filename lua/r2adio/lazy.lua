@@ -16,8 +16,8 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
   spec = {
-    { import = "aloks.plugins" },
-    { import = "aloks.plugins.lsp" },
+    { import = "r2adio.plugins" },
+    { import = "r2adio.plugins.lsp" },
   },
   checker = { enabled = true },
 })

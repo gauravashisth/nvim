@@ -60,3 +60,10 @@ keymap("n", "<leader>bd", ":bd<cr>", opts)
 
 -- write to buffers
 -- keymap("n", "<leader>w", ":w<cr>", opts)
+
+-- primeagen
+-- yank in system clipboard
+keymap("n", "<leader>y", '"+y', { noremap = true, silent = true })
+keymap("v", "<leader>y", '"+y', { noremap = true, silent = true })
+keymap("n", "<leader>Y", '"+Y', { noremap = true, silent = true })
+keymap("x", "<leader>p", '"_dP', { noremap = true, silent = true })

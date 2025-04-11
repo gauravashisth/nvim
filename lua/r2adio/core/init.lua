@@ -1,5 +1,5 @@
-require("aloks.core.options")
-require("aloks.core.keymaps")
+require("r2adio.core.options")
+require("r2adio.core.keymaps")
 
 -- Hyprlang LSP
 -- vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
