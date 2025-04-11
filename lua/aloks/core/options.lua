@@ -6,8 +6,8 @@ local options = {
   relativenumber = true,                   -- relative line numbers
   list = true,                             -- Show some invisible characters (tabs...)
   backup = false,                          -- creates a backup file
-  clipboard = "unnamedplus",               -- allows neovim to access the system clipboard
-  -- cmdheight = 2,                           -- more space in the neovim command line for displaying messages
+  -- clipboard = "unnamedplus",               -- allows neovim to access the system clipboard
+  cmdheight = 0,                           -- more space in the neovim command line for displaying messages
   completeopt = { "menuone", "noselect" }, -- mostly just for cmp
   conceallevel = 0,                        -- so that `` is visible in markdown files
   encoding = "utf-8",                      -- set encoding
@@ -18,7 +18,7 @@ local options = {
   mouse = "a",                             -- allow the mouse to be used in neovim
   pumheight = 10,                          -- pop up menu height
   showmode = false,                        -- we don't need to see things like -- INSERT -- anymore
-  showtabline = 2,                         -- always show tabs
+  showtabline = 0,                         -- always show tabs
   smartcase = true,                        -- smart case
   smartindent = true,                      -- make indenting smarter again
   splitbelow = true,                       -- force all horizontal splits to go below current window
@@ -33,13 +33,14 @@ local options = {
   shiftwidth = 2,                          -- the number of spaces inserted for each indentation
   softtabstop = 2,                         -- Number of spaces that a <Tab> counts for while editing
   tabstop = 2,                             -- insert 2 spaces for a tab
-  cursorline = true,                       -- highlight the current line
+  cursorline = false,                       -- highlight the current line
   numberwidth = 2,                         -- set number column width to 2 {default 4}
   signcolumn = "yes",                      -- always show the sign column, otherwise it would shift the text each time
   wrap = false,                            -- display lines as one long line
   scrolloff = 8,                           -- will always keep 8 lines of context
   sidescrolloff = 8,
-  guifont = "FiraCode Nerd Font:h17"       -- the font used in graphical neovim applications
+  guifont = "FiraCode Nerd Font:h17",       -- the font used in graphical neovim applications
+  guicursor="",
 }
 
 vim.opt.shortmess:append("c")
@@ -77,3 +78,12 @@ vim.api.nvim_create_autocmd("BufReadPost", {
     end
   end,
 }) -- return to last edit position when opening files
+
+--highlight when yanking text
+vim.api.nvim_create_autocmd("TextYankPost", {
+  desc = "Highlight when yanking test",
+  group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
+  callback = function()
+    vim.highlight.on_yank()
+  end,
+})

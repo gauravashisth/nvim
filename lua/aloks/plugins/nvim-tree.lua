@@ -31,7 +31,7 @@ return {
         centralize_selection = false,
         cursorline = true, -- Highlight the current line
         debounce_delay = 15,
-        side = "left", -- Position the file explorer on the left
+        side = "right", -- Position the file explorer on the right
         preserve_window_proportions = false,
         number = false, -- Disable line numbers
         relativenumber = false, -- Disable relative line numbers
