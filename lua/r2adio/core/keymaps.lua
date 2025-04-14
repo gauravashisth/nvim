@@ -67,3 +67,11 @@ keymap("n", "<leader>y", '"+y', { noremap = true, silent = true })
 keymap("v", "<leader>y", '"+y', { noremap = true, silent = true })
 keymap("n", "<leader>Y", '"+Y', { noremap = true, silent = true })
 keymap("x", "<leader>p", '"_dP', { noremap = true, silent = true })
+
+-- give a menu, can start replacing the word was on.
+keymap("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], opts)
+keymap("n", "<leader>S", ":CtrlSF ", opts)
+keymap("n", "<leader>sw", ":CtrlSF <C-r><C-w><cr>", opts)
+
+-- make the script executable.
+keymap("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })

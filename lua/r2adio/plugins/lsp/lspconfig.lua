@@ -199,7 +199,8 @@ return {
 			},
 		})
 		vim.diagnostic.config({
-			virtual_text = true,
+			-- virtual_text = true,
+			virtual_text = { current_line = true },
 			float = { border = "rounded" },
 			update_in_insert = false,
 			severity_sort = true,
