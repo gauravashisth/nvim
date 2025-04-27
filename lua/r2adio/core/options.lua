@@ -40,7 +40,7 @@ local options = {
 	linebreak = true, --wraps lines at word boundaries
 	scrolloff = 8, -- will always keep 8 lines of context
 	sidescrolloff = 8,
-	guifont = "FiraCode Nerd Font:h17", -- the font used in graphical neovim applications
+	-- guifont = "JetBrainsMono Nerd Font:h17", -- the font used in graphical neovim applications
 	guicursor = "",
 }
 
