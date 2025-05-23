@@ -1,5 +1,6 @@
 return {
-	"williamboman/mason.nvim",
+	-- "williamboman/mason.nvim",
+	"mason-org/mason.nvim",
 	dependencies = {
 		"williamboman/mason-lspconfig.nvim",
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
@@ -39,7 +40,7 @@ return {
 				"ts_ls",
 				-- "hyprls",
 			},
-			automatic_installation = true,
+			automatic_enable = true,
 		})
 
 		mason_tool_installer.setup({

@@ -7,12 +7,12 @@ return {
 			mode = "n",
 		},
 	},
-	{
-		"github/copilot.vim",
-		init = function()
-			vim.g.copilot_enabled = false
-		end,
-	},
+	-- {
+	-- 	"github/copilot.vim",
+	-- 	init = function()
+	-- 		vim.g.copilot_enabled = false
+	-- 	end,
+	-- },
 	{
 		"nvim-lualine/lualine.nvim",
 		dependencies = {
