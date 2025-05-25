@@ -38,6 +38,7 @@ return {
 				"prismals",
 				"pylsp", -- in place of pyright
 				"ts_ls",
+				"gopls",
 				-- "hyprls",
 			},
 			automatic_enable = true,
@@ -49,8 +50,11 @@ return {
 				"stylua", -- lua formatter
 				"isort", -- python formatter
 				"black", -- python formatter
-				"pylint",
-				"eslint_d",
+				-- "debugpy", --python begugger
+				"pylint", -- python linter
+				"eslint_d", -- js linter
+				-- "golines", --go formatter
+				"goimports", --go formatter
 			},
 		})
 	end,

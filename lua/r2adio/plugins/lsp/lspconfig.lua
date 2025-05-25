@@ -53,15 +53,15 @@ return {
 				opts.desc = "Show line diagnostics"
 				keymap.set("n", "<leader>d", vim.diagnostic.open_float, opts) -- show diagnostics for line
 
-				opts.desc = "Go to previous diagnostic"
-				keymap.set("n", "[d", function()
-					vim.diagnostic["goto"]({ direction = "prev" })
-				end, opts) -- jump to previous diagnostic in buffer
+				-- opts.desc = "Go to previous diagnostic"
+				-- keymap.set("n", "[d", function()
+				-- 	vim.diagnostic["goto"]({ direction = "prev" })
+				-- end, opts) -- jump to previous diagnostic in buffer
 
-				opts.desc = "Go to next diagnostic"
-				keymap.set("n", "]d", function()
-					vim.diagnostic["goto"]({ direction = "next" })
-				end, opts) -- jump to next diagnostic in buffer
+				-- opts.desc = "Go to next diagnostic"
+				-- keymap.set("n", "]d", function()
+				-- 	vim.diagnostic["goto"]({ direction = "next" })
+				-- end, opts) -- jump to next diagnostic in buffer
 
 				opts.desc = "Show documentation for what is under cursor"
 				keymap.set("n", "K", vim.lsp.buf.hover, opts) -- show documentation for what is under cursor
@@ -88,6 +88,42 @@ return {
 			cssls = {},
 			tailwindcss = {},
 			svelte = {},
+			gopls = {
+				settings = {
+					gofumpt = true,
+					codelenses = {
+						gc_details = false,
+						generate = true,
+						regenerate_cgo = true,
+						run_govulncheck = true,
+						test = true,
+						tidy = true,
+						upgrade_dependency = true,
+						vendor = true,
+					},
+					hints = {
+						assignVariableTypes = true,
+						compositeLiteralFields = true,
+						compositeLiteralTypes = true,
+						constantValues = true,
+						functionTypeParameters = true,
+						parameterNames = true,
+						rangeVariableTypes = true,
+					},
+					analyses = {
+						fieldalignment = true,
+						nilness = true,
+						unusedparams = true,
+						unusedwrite = true,
+						useany = true,
+					},
+					usePlaceholders = true,
+					completeUnimported = true,
+					staticcheck = true,
+					directoryFilters = { "-.git", "-.vscode", "-.idea", "-.vscode-test", "-node_modules" },
+					semanticTokens = true,
+				},
+			},
 			lua_ls = {
 				settings = {
 					Lua = {

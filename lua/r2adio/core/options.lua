@@ -63,13 +63,13 @@ vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
 }) -- python formatting
 
 vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
-	pattern = { "*.js", "*.html", "*.css", "*.lua" },
+	pattern = { "*.js", "*.html", "*.css", "*.lua", "*.md" },
 	callback = function()
 		vim.opt.tabstop = 2
 		vim.opt.shiftwidth = 2
 		vim.opt.softtabstop = 2
 	end,
-}) -- javascript, html, css, lua formatting
+}) -- javascript, html, css, lua, md formatting
 
 vim.api.nvim_create_autocmd("BufReadPost", {
 	pattern = "*",
@@ -79,6 +79,11 @@ vim.api.nvim_create_autocmd("BufReadPost", {
 		end
 	end,
 }) -- return to last edit position when opening files
+
+vim.api.nvim_create_autocmd("BufWritePost", {
+	pattern = { "aerospace.toml" },
+	command = "!aerospace reload-config",
+}) -- reload aerospace config
 
 --highlight when yanking text
 vim.api.nvim_create_autocmd("TextYankPost", {

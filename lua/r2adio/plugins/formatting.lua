@@ -14,6 +14,8 @@ return {
 				css = { "prettier" },
 				html = { "prettier" },
 				json = { "prettier" },
+				-- golang = { "golines" },
+				go = { "goimports", "gofmt" },
 				yaml = { "prettier" },
 				markdown = { "prettier" },
 				graphql = { "prettier" },
