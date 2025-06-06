@@ -84,6 +84,7 @@ return {
 		-- Define server configurations
 		local servers = {
 			-- Default setup for most language servers
+			clangd = {},
 			html = {},
 			cssls = {},
 			tailwindcss = {},

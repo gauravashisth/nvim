@@ -28,6 +28,7 @@ return {
 		mason_lspconfig.setup({
 			-- list of servers for mason to install
 			ensure_installed = {
+				"clangd",
 				"html",
 				"cssls",
 				"tailwindcss",
@@ -41,7 +42,7 @@ return {
 				"gopls",
 				-- "hyprls",
 			},
-			automatic_enable = true,
+			automatic_enable = false,
 		})
 
 		mason_tool_installer.setup({
